@@ -1,0 +1,21 @@
+//VARIABLES
+
+$background-brown: rgb(105, 48, 25);
+
+//GENERAL
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $background-brown;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
