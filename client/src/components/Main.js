@@ -1,11 +1,12 @@
 import React from "react";
-import LogoutButton from "./LogoutButton";
+import Navigation from "./Navigation";
+import Content from "./Content";
 
 function Main() {
   return (
     <div className="main-container">
-      <h1>Hello World</h1>
-      <LogoutButton />
+      <Navigation />
+      <Content />
     </div>
   )
 }

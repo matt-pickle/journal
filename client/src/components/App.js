@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/styles.scss';
 import {Switch, Route, Redirect} from "react-router-dom";
-import {UserContextProvider} from "./UserContext";
+import {ContextProvider} from "./Context";
 import Main from "./Main";
 import ProtectedRoute from "./ProtectedRoute";
 import Register from "./Register";
@@ -15,9 +15,9 @@ function App() {
           <Redirect to="/main" />
         </Route>
         <ProtectedRoute path="/main">
-          <UserContextProvider>
+          <ContextProvider>
             <Main />
-          </UserContextProvider>
+          </ContextProvider>
         </ProtectedRoute>
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
