@@ -3,7 +3,7 @@ const Context = React.createContext();
 
 function ContextProvider(props) {
   const [user, setUser] = useState("");
-  const [journal, setJournal] = useState({});
+  const [journal, setJournal] = useState([]);
   
   useEffect(() => {
     //Gets username from web token
