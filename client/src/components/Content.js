@@ -1,5 +1,6 @@
 import React from "react";
 import NewEntry from "./NewEntry";
+import "../styles/styles.scss";
 
 function Content(props) {
 
@@ -7,7 +8,7 @@ function Content(props) {
     <div className="content-container">
       <h1>Content</h1>
       <NewEntry />
-      <p>{props.displayedEntry}</p>
+      <p className="displayed-entry">{props.displayedEntry}</p>
     </div>
   )
 }
