@@ -10,9 +10,9 @@ function NewEntry(props) {
   useEffect(() => {
     const today = new Date();
     const month = today.getMonth() + 1;
-    const date = today.getDate();
+    const day = today.getDate();
     const year = today.getFullYear();
-    setDate(`${month}-${date}-${year}`);
+    setDate(`${month}-${day}-${year}`);
   }, []);
 
   function handleChange(event) {
@@ -20,11 +20,27 @@ function NewEntry(props) {
   }
 
   function addEntry() {
-    console.log(journal);
-    const newEntry = {date: date, entry: input};
-    const updatedJournal = [...journal, newEntry];
-    console.log(newEntry);
-    console.log(updatedJournal);
+    //Checks for existing entry for today's date
+    const existingEntry = journal.filter(entryObj => {
+      return entryObj.date === date;
+    });
+    let newEntry;
+    let updatedJournal;
+    //Appends new entry to today's existing entry or adds new entry if one does not exist for today
+    if (existingEntry) {
+      newEntry = {date: date, entry: existingEntry[existingEntry.length - 1].entry + "\n" + input};
+      const journalWithoutToday = journal.filter(entryObj => {
+        return entryObj.date !== date;
+      });
+      updatedJournal = [...journalWithoutToday, newEntry];
+    } else {
+      newEntry = {date: date, entry: input};
+      updatedJournal = [...journal, newEntry];
+    }
+    
+
+    console.log("newEntry: " + JSON.stringify(newEntry));
+    console.log("existingEntry: " + JSON.stringify(existingEntry));
 
     fetch(`/journal/updateJournal?user=${user}&journal=${JSON.stringify(updatedJournal)}`, {
       method: "PUT"
@@ -35,10 +51,8 @@ function NewEntry(props) {
           console.error(text);
         });
       } else {
-        res.text().then(text => {
-          window.location.reload(false);
-          setInput("");
-        });
+        window.location.reload(false);
+        setInput("");
       }
     });
   }
