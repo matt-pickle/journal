@@ -27,7 +27,7 @@ function NewEntry(props) {
     let newEntry;
     let updatedJournal;
     //Appends new entry to today's existing entry or adds new entry if one does not exist for today
-    if (existingEntry) {
+    if (existingEntry.length > 0) {
       newEntry = {date: date, entry: existingEntry[existingEntry.length - 1].entry + "\n" + input};
       const journalWithoutToday = journal.filter(entryObj => {
         return entryObj.date !== date;
@@ -37,10 +37,6 @@ function NewEntry(props) {
       newEntry = {date: date, entry: input};
       updatedJournal = [...journal, newEntry];
     }
-    
-
-    console.log("newEntry: " + JSON.stringify(newEntry));
-    console.log("existingEntry: " + JSON.stringify(existingEntry));
 
     fetch(`/journal/updateJournal?user=${user}&journal=${JSON.stringify(updatedJournal)}`, {
       method: "PUT"
