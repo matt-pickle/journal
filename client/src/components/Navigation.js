@@ -1,4 +1,5 @@
 import React, {useState, useContext, useEffect} from "react";
+import ThemeSwitch from "./ThemeSwitch";
 import LogoutButton from "./LogoutButton";
 import {Context} from "./Context";
 
@@ -6,7 +7,7 @@ function Navigation(props) {
   const {user, journal} = useContext(Context);
   const [entryDates, setEntryDates] = useState([]);
 
-  //Creates array of just the dates from journal entries
+  //Creates nav links for previous entries
   useEffect(() => {
     setEntryDates(
       journal.map(entry => {
@@ -19,6 +20,7 @@ function Navigation(props) {
     <div>
       <h1>Navigation Menu</h1>
       <p>{user}</p>
+      <ThemeSwitch />
       <p>{entryDates}</p>
       <LogoutButton />
     </div>

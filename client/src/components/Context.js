@@ -4,6 +4,7 @@ const Context = React.createContext();
 function ContextProvider(props) {
   const [user, setUser] = useState("");
   const [journal, setJournal] = useState([]);
+  const [theme, setTheme] = useState("light");
   
   useEffect(() => {
     //Gets username from web token
@@ -29,13 +30,26 @@ function ContextProvider(props) {
                   });
                 }
               });
+            //Gets current user's theme setting from database
+            fetch(`/theme/getTheme?user=${text}`)
+            .then(res => {
+              if (!res.ok) {
+                res.text().then(text => {
+                  console.error(text);
+                });
+              } else {
+                res.text().then(text => {
+                  setTheme(text);
+                });
+              }
+            });
           });
         }
       });
   }, []);
 
   return (
-    <Context.Provider value={{user: user, journal: journal}}>
+    <Context.Provider value={{user: user, journal: journal, theme: theme}}>
       {props.children}
     </Context.Provider>
   )
