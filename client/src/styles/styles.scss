@@ -10,7 +10,6 @@ $background-brown: rgb(105, 48, 25);
 
 body {
   margin: 0;
-  background-color: $background-brown;
   font-family: "Arial", sans-serif;
   line-height: 1.6;
 }
@@ -20,7 +19,27 @@ img {
   max-width: 100%;
 }
 
+.app {
+  display: grid;
+  height: 100vh;
+  background-color: $background-brown;
+  background-image: url("../images/wood-background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+//MAIN
+
+.main-container.dark {
+  background: rgb(20, 20, 20);
+  background-image: url("../images/wood-background-dark.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
 //CONTENT
+
 .displayed-entry {
   white-space: pre-wrap;
 }

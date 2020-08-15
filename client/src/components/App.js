@@ -9,7 +9,7 @@ import Login from "./Login";
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Switch>
         <Route exact path="/">
           <Redirect to="/main" />

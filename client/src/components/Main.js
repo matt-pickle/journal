@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import Content from "./Content";
 
 function Main() {
-  const {journal} = useContext(Context);
+  const {journal, theme} = useContext(Context);
   const [displayedEntry, setDisplayedEntry] = useState("");
   const [isNewEntryOpen, setIsNewEntryOpen] = useState(false);
 
@@ -24,7 +24,7 @@ function Main() {
   }
 
   return (
-    <div className="main-container">
+    <div className={"main-container " + theme}>
       <Navigation displayEntry={displayEntry}/>
       <Content displayedEntry={displayedEntry}
                isNewEntryOpen={isNewEntryOpen}
