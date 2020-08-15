@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {Link} from "react-router-dom";
 import Button from "./Button";
-import "../styles/styles.scss";
 
 function Register(props) {
   const [username, setUsername] = useState("");
@@ -37,32 +36,28 @@ function Register(props) {
   }
 
   return (
-    <div className="register">
-      <p className="reg-title">Register new user</p>
+    <div className="register-container">
+      <p className="reg-title">REGISTER NEW USER</p>
       {message ? <p>***{message}***</p> : null}
-      <div className="input-box reg-input-box">
-        <label htmlFor="reg-username">Username</label>
-        <div className="input-container">
-          <input type="text"
-                 id="reg-username"
-                 value={username}
-                 onChange={handleNameChange}
-          />
-        </div>
+      <div className="reg-input-box">
+        <label htmlFor="reg-username" className="reg-label">Username:</label>
+        <input type="text"
+                id="reg-username"
+                value={username}
+                onChange={handleNameChange}
+        />
       </div>
-      <div className="input-box reg-input-box">
-      <label htmlFor="reg-password">Password</label>
-        <div className="input-container">
-          <input type="password"
-                 id="reg-password"
-                 value={password}
-                 onChange={handlePasswordChange}
-          />
-        </div>
-    </div>
+      <div className="reg-input-box">
+        <label htmlFor="reg-password" className="reg-label">Password:</label>
+        <input type="password"
+                id="reg-password"
+                value={password}
+                onChange={handlePasswordChange}
+        />
+      </div>
     <Button text="REGISTER"
               onClick={handleClick}
-      />
+    />
     <p className="reg-text">Already have an account?</p>
     <Link to="/login">
       <Button text="GO TO LOGIN PAGE" />

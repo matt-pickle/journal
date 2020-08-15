@@ -1,6 +1,7 @@
 //VARIABLES
 
-$background-brown: rgb(105, 48, 25);
+$brown: rgb(80, 35, 10);
+$sepia: rgb(255, 240, 180);
 
 //GENERAL
 
@@ -10,7 +11,9 @@ $background-brown: rgb(105, 48, 25);
 
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  color: $brown;
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
   line-height: 1.6;
 }
 
@@ -21,12 +24,69 @@ img {
 
 .app {
   display: grid;
+  align-content: center;
   height: 100vh;
-  background-color: $background-brown;
+  background-color: $brown;
   background-image: url("../images/wood-background.jpg");
   background-size: cover;
   background-position: center;
 }
+
+.button {
+  padding: .25em .75em 0;
+  cursor: pointer;
+  font-family: "Kalam", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  border: 3px solid $brown;
+  background-color: $sepia;
+  color: $brown;
+}
+
+.button.hovered {
+  color: $sepia;
+  background-color: $brown;
+}
+
+//REGISTER & LOGIN
+
+.register-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1em;
+  background: $sepia;
+  box-shadow: 2px 2px 5px black;
+}
+
+.reg-title {
+  margin: 0 0 .5em;
+  font-size: 1.75rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.reg-input-box {
+  margin: 0 0 1em;
+}
+
+.reg-label {
+  margin-right: .5em;
+}
+
+#reg-username,
+#reg-password {
+  height: 2em;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid $brown;
+}
+
+.reg-text {
+  margin: 1em 0 .5em;
+}
+
 
 //MAIN
 

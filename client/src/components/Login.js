@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Button from "./Button";
 import {Link} from "react-router-dom";
-import "../styles/styles.scss";
 
 function Login(props) {
   const [username, setUsername] = useState("");
@@ -37,27 +36,23 @@ function Login(props) {
   }
 
   return (
-    <div className="register">
+    <div className="register-container">
       {message ? <p>***{message}***</p> : null}
-      <div className="input-box reg-input-box">
-        <label htmlFor="reg-username">Username</label>
-        <div className="input-container">
-          <input type="text"
-                  id="reg-username"
-                  value={username}
-                  onChange={handleNameChange}
-          />
-        </div>
+      <div className="reg-input-box">
+        <label htmlFor="reg-username" className="reg-label">Username:</label>
+        <input type="text"
+                id="reg-username"
+                value={username}
+                onChange={handleNameChange}
+        />
       </div>
-      <div className="input-box reg-input-box">
-      <label htmlFor="reg-password">Password</label>
-        <div className="input-container">
-          <input type="password"
-                  id="reg-password"
-                  value={password}
-                  onChange={handlePasswordChange}
-          />
-        </div>
+      <div className="reg-input-box">
+        <label htmlFor="reg-password" className="reg-label">Password:</label>
+        <input type="password"
+                id="reg-password"
+                value={password}
+                onChange={handlePasswordChange}
+        />
     </div>
     <Button text="LOGIN"
             onClick={handleClick}
