@@ -5,8 +5,18 @@ import Content from "./Content";
 
 function Main() {
   const {journal, theme} = useContext(Context);
+  const [isNavOpen, setIsNavOpen] = useState("");
   const [displayedEntry, setDisplayedEntry] = useState("");
   const [isNewEntryOpen, setIsNewEntryOpen] = useState(false);
+
+  function openNav() {
+    setIsNavOpen("open");
+  }
+
+  function closeNav() {
+    setIsNavOpen("");
+  }
+
 
   //Changes displayed entry when a nav link is clicked
   function displayEntry(entryDate) {
@@ -25,7 +35,13 @@ function Main() {
 
   return (
     <div className={"main-container " + theme}>
-      <Navigation displayEntry={displayEntry}/>
+      <button className="open-nav-button"
+              onClick={openNav}
+      >OPEN NAV</button>
+      <Navigation isNavOpen={isNavOpen}
+                  closeNav={closeNav}
+                  displayEntry={displayEntry}
+      />
       <Content displayedEntry={displayedEntry}
                isNewEntryOpen={isNewEntryOpen}
                startNewEntry={startNewEntry}

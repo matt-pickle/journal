@@ -106,6 +106,75 @@ img {
   background-attachment: fixed;
 }
 
+//NAVIGATION
+
+.nav-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 12em;
+  background: $sepia;
+  padding: 0 1em 1.5em;
+  box-shadow: 2px 2px 5px black;
+  transition: transform 400ms;
+}
+
+.nav-container.open {
+  transform: translateX(-100%);
+}
+
+.close-nav-button {
+  align-self: start;
+  justify-self: end;
+  margin: 0;
+  padding: 0;
+  color: $brown;
+  background: $sepia;
+  font-family: inherit;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+
+}
+
+.greeting {
+  margin: 0;
+}
+
+.theme-switch {
+  margin: 0 0 1em;
+}
+
+.previous-entries {
+  margin: 1em 0 0;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.nav-links-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.nav-link {
+  padding: 0 .25em;
+  margin: .5em;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: $sepia;
+  border: none;
+  color: $brown;
+}
+
+.nav-link.hovered {
+  border-bottom: 3px solid $brown;
+}
+
 //CONTENT
 
 .displayed-entry {

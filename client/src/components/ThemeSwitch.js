@@ -21,11 +21,8 @@ function ThemeSwitch() {
   }
 
   return (
-    <div className="theme-switch">
-      <p>Theme: {theme}</p>
-      <button onClick={toggleTheme}>Switch Theme</button>
-    </div>
-  )
+    <button className="theme-switch" onClick={toggleTheme}>Switch Theme</button>
+    )
 }
 
 export default ThemeSwitch;

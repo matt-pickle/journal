@@ -1,5 +1,6 @@
 import React, {useState, useContext, useEffect} from "react";
 import ThemeSwitch from "./ThemeSwitch";
+import NavLink from "./NavLink";
 import LogoutButton from "./LogoutButton";
 import {Context} from "./Context";
 
@@ -11,18 +12,24 @@ function Navigation(props) {
   useEffect(() => {
     setEntryDates(
       journal.map(entry => {
-        return <button onClick={() => props.displayEntry(entry.date)}>{entry.date}</button>;
+        return <NavLink text={entry.date}
+                        onClick={() => props.displayEntry(entry.date)}
+               />;
       })
     );
   }, [journal]);
 
   return (
-    <div>
-      <h1>Navigation Menu</h1>
-      <p>{user}</p>
+    <div className={"nav-container " + props.isNavOpen} >
+      <button class="close-nav-button"
+              onClick={props.closeNav}
+      >&times;</button>
+      <h2 className="greeting">Hello, {user}!</h2>
       <ThemeSwitch />
-      <p>{entryDates}</p>
       <LogoutButton />
+      <p className="previous-entries">Previous Entries:</p>
+      <div className="nav-links-container">{entryDates}</div>
+      
     </div>
   )
 }
