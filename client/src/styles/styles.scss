@@ -9,6 +9,14 @@ $sepia: rgb(255, 240, 180);
   box-sizing: border-box;
 }
 
+html {
+  background-color: $brown;
+  background-image: url("../images/wood-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 body {
   margin: 0;
   color: $brown;
@@ -24,12 +32,8 @@ img {
 
 .app {
   display: grid;
-  align-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: $brown;
-  background-image: url("../images/wood-background.jpg");
-  background-size: cover;
-  background-position: center;
 }
 
 .button {
@@ -90,13 +94,17 @@ img {
 
 //MAIN
 
+.main-container {
+  height: 100%;
+}
+
 .main-container.dark {
   background: rgb(20, 20, 20);
   background-image: url("../images/wood-background-dark.jpg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
-
 
 //CONTENT
 
