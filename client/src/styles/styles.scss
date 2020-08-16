@@ -141,15 +141,31 @@ img {
 }
 
 .greeting {
-  margin: 0;
+  margin: 0 0 .25em;
 }
 
-.theme-switch {
+.theme-switch-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: .25em;
   margin: 0 0 1em;
 }
 
+.theme-switch-label {
+  margin-top: .2em;
+  font-weight: 600;
+}
+
+.theme-switch {
+  color: $brown;
+  font-size: 1.75rem;
+  background: $sepia;
+  border: none;
+  cursor: pointer;
+}
+
 .previous-entries {
-  margin: 1em 0 0;
+  margin: 1.25em 0 0;
   font-weight: 600;
   text-decoration: underline;
 }

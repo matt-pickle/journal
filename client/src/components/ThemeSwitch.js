@@ -20,8 +20,17 @@ function ThemeSwitch() {
     });
   }
 
+  //Changes which switch icon to display depending on the current theme
+  const switchIcon = theme === "light" ? "fa-toggle-off" : "fa-toggle-on";
+
   return (
-    <button className="theme-switch" onClick={toggleTheme}>Switch Theme</button>
+    <div className="theme-switch-container">
+      <span className="theme-switch-label">Switch Theme: </span>
+      <button className={"theme-switch fas " + switchIcon}
+            onClick={toggleTheme}>
+      </button>
+    </div>
+    
     )
 }
 
