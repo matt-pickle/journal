@@ -95,7 +95,10 @@ img {
 //MAIN
 
 .main-container {
+  display: grid;
+  grid-template-rows: 2em auto;
   height: 100%;
+  padding: .5em;
 }
 
 .main-container.dark {
@@ -104,6 +107,15 @@ img {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+}
+
+.open-nav-button {
+  justify-self: end;
+  border: none;
+  background: none;
+  color: $sepia;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 //NAVIGATION
