@@ -5,7 +5,7 @@ import LogoutButton from "./LogoutButton";
 import {Context} from "./Context";
 
 function Navigation(props) {
-  const {user, journal} = useContext(Context);
+  const {user, journal, theme} = useContext(Context);
   const [entryDates, setEntryDates] = useState([]);
 
   //Creates nav links for previous entries
@@ -20,7 +20,7 @@ function Navigation(props) {
   }, [journal]);
 
   return (
-    <div className={"nav-container " + props.isNavOpen} >
+    <div className={"nav-container " + props.isNavOpen + " " + theme} >
       <button class="close-nav-button"
               onClick={props.closeNav}
       >&times;</button>

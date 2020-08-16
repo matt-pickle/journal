@@ -126,6 +126,18 @@ img {
   transform: translateX(-100%);
 }
 
+.nav-container.dark,
+.nav-container.dark button {
+  border-color: white;
+  color: white;
+  background: black;
+}
+
+.nav-container.dark .button.hovered {
+  color: black;
+  background: white;
+}
+
 .close-nav-button {
   align-self: start;
   justify-self: end;
@@ -137,7 +149,6 @@ img {
   font-size: 2rem;
   border: none;
   cursor: pointer;
-
 }
 
 .greeting {
