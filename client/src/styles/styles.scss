@@ -195,11 +195,12 @@ img {
   font-size: inherit;
   background-color: $sepia;
   border: none;
+  border-bottom: 3px solid $sepia;
   color: $brown;
 }
 
 .nav-link.hovered {
-  border-bottom: 3px solid $brown;
+  border-color: $brown;
 }
 
 //CONTENT
