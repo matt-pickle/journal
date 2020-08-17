@@ -138,17 +138,7 @@ img {
   transform: translateX(-100%);
 }
 
-.nav-container.dark,
-.nav-container.dark button {
-  border-color: white;
-  color: white;
-  background: black;
-}
 
-.nav-container.dark .button.hovered {
-  color: black;
-  background: white;
-}
 
 .close-nav-button {
   align-self: start;
@@ -214,6 +204,31 @@ img {
 .nav-link.hovered {
   border-color: $brown;
 }
+
+.nav-container.dark,
+.nav-container.dark .button,
+.nav-container.dark .theme-switch {
+  border-color: white;
+  color: white;
+  background: black;
+}
+
+.nav-container.dark .button.hovered {
+  color: black;
+  background: white;
+}
+
+.nav-container.dark .nav-link {
+  border-color: black;
+  color: white;
+  background: black;
+}
+
+.nav-container.dark .nav-link.hovered {
+  border-color: white;
+}
+
+
 
 @media (min-width: 900px) {
   .nav-container {
