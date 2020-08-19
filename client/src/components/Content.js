@@ -6,13 +6,15 @@ import "../styles/styles.scss";
 function Content(props) {
   return (
     <div className="content-container">
-      <h1>Content</h1>
-      <Button text="New Entry" 
+      <Button text="NEW ENTRY" 
               onClick={props.startNewEntry}
       />
       {props.isNewEntryOpen ?
         <NewEntry /> :
-        <p className="displayed-entry">{props.displayedEntry}</p>
+        <div>
+          <h1 className="entry-header">{props.displayedEntry.date}</h1>
+          <p className="displayed-entry">{props.displayedEntry.entry}</p>
+        </div>
       }
     </div>
   )

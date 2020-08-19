@@ -55,8 +55,10 @@ function NewEntry(props) {
 
   return (
     <div className="new-entry-container">
-      <h1>New Entry, {date}</h1>
-      <textarea value={input}
+      <h1 className="entry-header">{date}</h1>
+      <textarea className="new-entry-textarea"
+                placeholder="Type your entry here"
+                value={input}
                 onChange={handleChange}
       />
       <Button text="SUBMIT"

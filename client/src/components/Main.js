@@ -23,7 +23,7 @@ function Main() {
     setDisplayedEntry(
       journal.filter(item => {
         return item.date === entryDate;
-      })[0].entry
+      })[0]
     )
     setIsNewEntryOpen(false);
   }
