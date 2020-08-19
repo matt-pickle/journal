@@ -28,7 +28,7 @@ function NewEntry() {
     let updatedJournal;
     //Appends new entry to today's existing entry or adds new entry if one does not exist for today
     if (existingEntry.length > 0) {
-      newEntry = {date: date, entry: existingEntry[existingEntry.length - 1].entry + "\n" + input};
+      newEntry = {date: date, entry: existingEntry[existingEntry.length - 1].entry + "\n---\n" + input};
       const journalWithoutToday = journal.filter(entryObj => {
         return entryObj.date !== date;
       });
