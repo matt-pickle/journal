@@ -17,7 +17,6 @@ function Main() {
     setIsNavOpen("");
   }
 
-
   //Changes displayed entry when a nav link is clicked
   function displayEntry(entryDate) {
     setDisplayedEntry(

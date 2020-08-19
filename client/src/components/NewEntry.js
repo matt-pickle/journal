@@ -2,8 +2,8 @@ import React, {useState, useContext, useEffect} from "react";
 import {Context} from "./Context";
 import Button from "./Button";
 
-function NewEntry(props) {
-  const {user, journal} = useContext(Context);
+function NewEntry() {
+  const {user, journal, updateContext} = useContext(Context);
   const [input, setInput] = useState("");
   const [date, setDate] = useState("");
 
@@ -47,7 +47,7 @@ function NewEntry(props) {
           console.error(text);
         });
       } else {
-        window.location.reload(false);
+        updateContext();
         setInput("");
       }
     });

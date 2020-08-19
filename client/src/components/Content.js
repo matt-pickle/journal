@@ -10,7 +10,7 @@ function Content(props) {
               onClick={props.startNewEntry}
       />
       {props.isNewEntryOpen ?
-        <NewEntry /> :
+        <NewEntry updateMain={props.updateMain} /> :
         <div>
           <h1 className="entry-header">{props.displayedEntry.date}</h1>
           <p className="displayed-entry">{props.displayedEntry.entry}</p>

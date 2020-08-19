@@ -5,7 +5,8 @@ function ContextProvider(props) {
   const [user, setUser] = useState("");
   const [journal, setJournal] = useState([]);
   const [theme, setTheme] = useState("light");
-  
+  const [forceUpdate, setForceUpdate] = useState(true);
+
   useEffect(() => {
     //Gets username from web token
     fetch("/user/getUser")
@@ -46,10 +47,17 @@ function ContextProvider(props) {
           });
         }
       });
-  }, []);
+  }, [forceUpdate]);
+
+  
+  //Forces rerender of Context
+  function updateContext() {
+    setForceUpdate(prev => !prev);
+  }
+  
 
   return (
-    <Context.Provider value={{user: user, journal: journal, theme: theme}}>
+    <Context.Provider value={{user: user, journal: journal, theme: theme, updateContext: updateContext}}>
       {props.children}
     </Context.Provider>
   )

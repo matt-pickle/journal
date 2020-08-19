@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {Context} from "./Context";
 
 function ThemeSwitch() {
-  const {user, theme} = useContext(Context);
+  const {user, theme, updateContext} = useContext(Context);
 
   function toggleTheme() {
     const newTheme = theme === "light" ? "dark" : "light";
@@ -15,7 +15,7 @@ function ThemeSwitch() {
           console.error(text);
         });
       } else {
-        window.location.reload(false);
+        updateContext();
       }
     });
   }
