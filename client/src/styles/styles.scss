@@ -287,12 +287,15 @@ img {
 .displayed-entry {
   margin: 0;
   white-space: pre-wrap;
+  font-family: "Kalam", sans-serif;
+  font-size: 1.25rem;
 }
 
 .entry-header {
   margin: .5em 0 0;
+  font-family: "Kalam", sans-serif;
   text-decoration: underline;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .new-entry-textarea {
@@ -303,5 +306,5 @@ img {
   border: none;
   color: inherit;
   font-family: "Kalam", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
 }
