@@ -101,6 +101,15 @@ img {
   padding: .5em;
 }
 
+.open-nav-button {
+  justify-self: end;
+  border: none;
+  background: none;
+  color: $sepia;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
 .main-container.dark {
   background: rgb(20, 20, 20);
   background-image: url("../images/wood-background-dark.jpg");
@@ -109,13 +118,8 @@ img {
   background-attachment: fixed;
 }
 
-.open-nav-button {
-  justify-self: end;
-  border: none;
-  background: none;
-  color: $sepia;
-  font-size: 2rem;
-  cursor: pointer;
+.main-container.dark button {
+  color: white;
 }
 
 //NAVIGATION
@@ -307,4 +311,20 @@ img {
   color: inherit;
   font-family: "Kalam", sans-serif;
   font-size: 1.25rem;
+}
+
+.content-container.dark,
+.content-container.dark .button {
+  color: white;
+  border-color: white;
+  background: black;
+}
+
+.content-container.dark .button.hovered {
+  color: black;
+  background: white;
+}
+
+.new-entry-container.dark textarea{
+  background: black;
 }

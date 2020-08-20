@@ -1,11 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
+import {Context} from "./Context";
 import Button from "./Button";
 import NewEntry from "./NewEntry";
 import "../styles/styles.scss";
 
 function Content(props) {
+  const {theme} = useContext(Context);
+
   return (
-    <div className="content-container">
+    <div className={"content-container " + theme}>
       <Button text="NEW ENTRY" 
               onClick={props.startNewEntry}
       />

@@ -3,7 +3,7 @@ import {Context} from "./Context";
 import Button from "./Button";
 
 function NewEntry() {
-  const {user, journal, updateContext} = useContext(Context);
+  const {user, journal, theme, updateContext} = useContext(Context);
   const [input, setInput] = useState("");
   const [date, setDate] = useState("");
 
@@ -54,7 +54,7 @@ function NewEntry() {
   }
 
   return (
-    <div className="new-entry-container">
+    <div className={"new-entry-container " + theme}>
       <h1 className="entry-header">{date}</h1>
       <textarea className="new-entry-textarea"
                 placeholder="Type your entry here"
