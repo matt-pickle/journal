@@ -25,6 +25,7 @@ function Main() {
       })[0]
     )
     setIsNewEntryOpen(false);
+    closeNav();
   }
   
   //Opens New Entry box when "New Entry" button is clicked
