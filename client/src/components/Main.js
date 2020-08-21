@@ -34,9 +34,9 @@ function Main() {
 
   return (
     <div className={"main-container " + theme}>
-      <button className="open-nav-button"
-              onClick={openNav}
-      >&#9776;</button>
+      <button className="open-nav-button fas fa-bars"
+              onClick={openNav}>
+      </button>
       <Navigation isNavOpen={isNavOpen}
                   closeNav={closeNav}
                   displayEntry={displayEntry}
