@@ -61,6 +61,8 @@ function Login(props) {
     <Link to="/register">
       <Button text="REGISTER NEW USER" />
     </Link>
+    <p className="guest-text"> or enter "guest"
+    <br/>as username and password</p>
   </div>
   )
 }
